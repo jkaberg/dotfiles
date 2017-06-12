@@ -1,6 +1,6 @@
-function do_ssh() {
+function super_ssh() {
     /usr/bin/rsync -avqr --files-from=/home/$USER/.bash_include/ssh_sync_files ~ $1:~/
     /usr/bin/ssh $1
 }
 
-alias ssh='do_ssh'
+alias superssh='super_ssh'
