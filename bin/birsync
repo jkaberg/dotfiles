@@ -149,7 +149,7 @@ watcher () {
   msg INFO "$LINENO- spawning inotifywait"
   
   # also exclude dot and .tmp files
-  if inotifywait -r -e CREATE,MOVED_TO --excludei '^\..*\*.tmp*$' --format '%T %e %w%f' --timefmt '%s' "$watcheddir" &>>$log; then
+  if /usr/bin/inotifywait -r -e CREATE,MOVED_TO --excludei '^\..*\*.tmp*$' --format '%T %e %w%f' --timefmt '%s' "$watcheddir" &>>$log; then
     sync & # fork it into it's own subshell
     # TODO: how to capture/eval exit codes from forked shell?
   else
