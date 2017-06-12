@@ -1,0 +1,7 @@
+function super_push() {
+    git add -u
+    git commit -m $1
+    git push
+}
+
+alias superpush='super_push'
