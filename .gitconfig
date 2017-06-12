@@ -1,1 +1,5 @@
-/home/joelk/.gitconfig
+[push]
+	default = simple
+[user]
+	name = Joel Kåberg
+	email = joel.kaberg@nhn.no
