@@ -26,11 +26,7 @@ HISTSIZE=100
 HISTCONTROL=ignorespace
 
 # ls aliases
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
-alias lt='ls -laptr' #oldest first sort
-alias labc='ls -lap' #alphabetical sort
+alias ll='ls -la --color=auto'
 
 # cd aliases
 alias ..='cd ..'
