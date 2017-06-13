@@ -6,8 +6,9 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # Include custom bash stuff
-if [ -d ~/.bash_include ]; then
-    . ~/.bash_include/*
+if [ -e ~/.bash_include ]; then
+    #. ~/.bash_include/*.bash
+    source <(cat .bash_include/*.bash)
 fi
 
 # stop the pc speaker ever annoying me :)

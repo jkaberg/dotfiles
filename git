@@ -1,4 +1,4 @@
-function super_push() {
+function super_push() {
     git add -u
     git commit -m $1
     git push
