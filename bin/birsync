@@ -1,19 +1,20 @@
 #!/usr/bin/env bash
 watcheddir=$1
 rsyncdest=$2
-rsync_opts=( "-av" "--delete" )
+rsync_opts=( "-av" "--delete" "--quiet" )
 
 sync () {
-  /usr/bin/rsync "${rsync_opts[@]}" --exclude=**/.* --exclude=**/*.tmp $watcheddir $rsyncdest
+    date "+%H:%M:%S Syncing..."
+    /usr/bin/rsync "${rsync_opts[@]}" --exclude=**/.* --exclude=**/*.tmp $watcheddir $rsyncdest
 }
 
 watcher () {
-  if /usr/bin/inotifywait -qq -r -e CREATE,DELETE,MODIFY --excludei '^\..*\*.tmp*$' "$watcheddir"; then
-    sync &
-  fi
+    if /usr/bin/inotifywait -qq -r -e CREATE,DELETE,MODIFY --excludei '^\..*\*.tmp*$' "$watcheddir"; then
+        sync &
+    fi
 }
 
 while watcher; do
-  :
+    :
 done
 
