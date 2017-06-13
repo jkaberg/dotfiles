@@ -15,16 +15,16 @@ fi
 setterm -bfreq 0
 
 # don't put duplicate lines in the history. See bash(1) for more options
-HISTCONTROL=ignoredups
-# ... and ignore same sucessive entries.
-HISTCONTROL=ignoreboth
+HISTCONTROL=ignorespace:ignoredups:erasedups:ignoreboth
+shopt -s histappend
+PROMPT_COMMAND="history -n;history -w;history -c;history -r;$PROMPT_COMMAND"
+
+# ignore certain commands in history
+HISTIGNORE='rm:ll:git:superssh:superpush:..:...:....'
 
 # Expand the history size
 HISTFILESIZE=10000
 HISTSIZE=100
-
-# commands with leading space do not get added to history
-HISTCONTROL=ignorespace
 
 # ls aliases
 alias ll='ls -la --color=auto'
@@ -39,10 +39,6 @@ export GREP_OPTIONS='--color=auto'
 
 # default to vim
 export EDITOR=vim
-
-# dont overwrite bash history when running simultanious bash instances
-shopt -s histappend
-PROMOT_COMMAND='history -a'
 
 # check if window resizes to mitigate line endings when paste etc
 shopt -s checkwinsize
