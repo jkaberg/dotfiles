@@ -4,7 +4,7 @@ rsyncdest=$2
 rsync_opts=( "-av" "--delete" "--quiet" )
 
 sync () {
-    date "+%H:%M:%S Syncing..."
+    date "+%H:%M:%S:%3N Syncing..."
     /usr/bin/rsync "${rsync_opts[@]}" --exclude=**/.* --exclude=**/*.tmp $watcheddir $rsyncdest
 }
 
