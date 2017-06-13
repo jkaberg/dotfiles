@@ -11,16 +11,13 @@ if [ -e ~/.bash_include ]; then
     source <(cat .bash_include/*.bash)
 fi
 
-# stop the pc speaker ever annoying me :)
-setterm -bfreq 0
-
 # don't put duplicate lines in the history. See bash(1) for more options
 HISTCONTROL=ignorespace:ignoredups:erasedups:ignoreboth
 shopt -s histappend
 PROMPT_COMMAND="history -n;history -w;history -c;history -r;$PROMPT_COMMAND"
 
 # ignore certain commands in history
-HISTIGNORE='rm:ll:git:superssh:superpush:..:...:....'
+HISTIGNORE='rm:ll:git:superssh:superpush:..:...:....:history'
 
 # Expand the history size
 HISTFILESIZE=10000
