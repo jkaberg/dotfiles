@@ -7,8 +7,7 @@ fi
 
 # Include custom bash stuff
 if [ -e ~/.bash_include ]; then
-    #. ~/.bash_include/*.bash
-    source <(cat .bash_include/*.bash)
+    for file in "$(find ~/.bash_include/ -maxdepth 1 -name '*.bash' -print)"; do source $file; done
 fi
 
 # don't put duplicate lines in the history. See bash(1) for more options
