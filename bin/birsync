@@ -2,6 +2,7 @@
 watcheddir=$1
 rsyncdest=$2
 rsync_opts=( "-av" "--delete" "--quiet" )
+ignore='(\.swp|\.tmp|\.git|\~)'
 
 sync () {
     date "+%H:%M:%S:%3N Syncing..."
@@ -9,10 +10,12 @@ sync () {
 }
 
 watcher () {
-    if /usr/bin/inotifywait -qq -r -e CREATE,DELETE,MODIFY --excludei '^\..*\*.tmp*$' "$watcheddir"; then
+    if /usr/bin/inotifywait -qq -r -e CREATE,DELETE,MODIFY --excludei "$ignore" "$watcheddir"; then
         sync &
     fi
 }
+
+sync &
 
 while watcher; do
     :
