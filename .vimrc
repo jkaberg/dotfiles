@@ -34,7 +34,7 @@ filetype plugin indent on
 let g:UltiSnipsExpandTrigger="<c-f>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-autocmd FileType sls UltiSnipsAddFiletypes jinja "jinja snip
+autocmd FileType sls UltiSnipsAddFiletypes jinja
 
 "airline
 let python_highlight_all = 1
@@ -54,6 +54,7 @@ let g:syntastic_python_checkers = ['flake8']
 "misc
 syntax on
 colorscheme solarized
+set background=dark
 
 set laststatus=2
 set pastetoggle=<F9>
