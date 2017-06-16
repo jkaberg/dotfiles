@@ -19,8 +19,11 @@ Plugin 'stephpy/vim-yaml'                   "salt
 Plugin 'Glench/Vim-Jinja2-Syntax'           "salt
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'godlygeek/tabular'
+Plugin 'tpope/vim-surround'
+Plugin 'townk/vim-autoclose'
 
 "bling bling
+Plugin 'yggdroot/indentline'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -44,7 +47,6 @@ let g:airline#extensions#tabline#enable = 1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:synastic_always_popluate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -59,6 +61,7 @@ set background=dark
 set laststatus=2
 set pastetoggle=<F9>
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
