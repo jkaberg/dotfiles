@@ -25,8 +25,6 @@ Plugin 'townk/vim-autoclose'
 "bling bling
 Plugin 'yggdroot/indentline'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 
 "colors
 Plugin 'altercation/vim-colors-solarized'
@@ -41,9 +39,6 @@ autocmd FileType sls UltiSnipsAddFiletypes jinja
 
 "powerline
 set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
-"airline
-"let python_highlight_all = 1
-"let g:airline#extensions#tabline#enable = 1
 
 "syntastic
 set statusline+=%#warningmsg#
