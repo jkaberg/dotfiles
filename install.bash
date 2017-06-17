@@ -6,12 +6,12 @@ for f in "${files[@]}"
 do
     :
     path="$PWD/$f"
-    rm -rf "~/$f"
+    rm -rf "$HOME/$f"
 
     if [[ -d "$path" ]]; then
-        ln -s "$path" "~/$f"
+        ln -s "$path" "$HOME"
     else
-        ln "$path" "~/$f"
+        ln "$path" "$HOME/$f"
     fi
 done
 
@@ -21,5 +21,3 @@ wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.ot
 mkdir -p ~/.fonts/ && mv PowerlineSymbols.otf ~/.fonts/
 fc-cache -vf ~/.fonts
 mkdir -p ~/.config/fontconfig/conf.d/ && mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
-
-
