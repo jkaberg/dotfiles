@@ -10,6 +10,19 @@ if [ -e ~/.bash_include ]; then
     for file in "$(find ~/.bash_include/ -maxdepth 1 -name '*.bash' -print)"; do source $file; done
 fi
 
+# Include local bin
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+# Powerline
+if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
+    source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+fi
+
+# Set TERM
+export TERM=xterm-256color
+
 # don't put duplicate lines in the history. See bash(1) for more options
 HISTCONTROL=ignorespace:ignoredups:erasedups:ignoreboth
 shopt -s histappend
@@ -25,13 +38,13 @@ HISTSIZE=100
 # ls aliases
 alias ll='ls -la --color=auto'
 
+# grep alias
+alias grep='grep --color=auto'
+
 # cd aliases
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-
-# colorize grep
-export GREP_OPTIONS='--color=auto'
 
 # default to vim
 export EDITOR=vim

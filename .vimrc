@@ -39,9 +39,11 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 autocmd FileType sls UltiSnipsAddFiletypes jinja
 
+"powerline
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 "airline
-let python_highlight_all = 1
-let g:airline#extensions#tabline#enable = 1
+"let python_highlight_all = 1
+"let g:airline#extensions#tabline#enable = 1
 
 "syntastic
 set statusline+=%#warningmsg#
