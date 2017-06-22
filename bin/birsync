@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 watcheddir=$1
 rsyncdest=$2
-rsync_opts=( "-av" "--delete" "--quiet" )
+rsync_opts=( "-av" "--delete" "--quiet" "--ignore-errors" )
 ignore='(\.swp|\.tmp|\.git|\~)'
 
 sync () {
