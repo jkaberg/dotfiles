@@ -21,7 +21,7 @@ if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.s
 fi
 
 # Set TERM
-export TERM=xterm-256color
+#export TERM=screen-256color
 
 # don't put duplicate lines in the history. See bash(1) for more options
 HISTCONTROL=ignorespace:ignoredups:erasedups:ignoreboth
@@ -56,3 +56,4 @@ shopt -s checkwinsize
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
+
