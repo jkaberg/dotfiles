@@ -6,7 +6,7 @@ ignore='(\.swp|\.tmp|\.git|\~)'
 
 sync () {
     date "+%H:%M:%S:%3N Syncing..."
-    /usr/bin/rsync "${rsync_opts[@]}" --exclude=**/.* --exclude=**/*.tmp $watcheddir $rsyncdest | grep /usr/bin/grep 'WARNING' &> /dev/null
+    /usr/bin/rsync "${rsync_opts[@]}" --exclude=**/.* --exclude=**/*.tmp $watcheddir $rsyncdest | /usr/bin/grep 'WARNING' &> /dev/null
     if [ $? == 0 ]; then
         date "+%H:%M:%S:%3N Sync failed, retrying..."
         sync &
