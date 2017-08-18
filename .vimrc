@@ -12,8 +12,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
 "syntax
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'ekalinin/Dockerfile.vim'            "docker
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'ekalinin/Dockerfile.vim'            "docker
 Plugin 'Saltstack/Salt-vim'                 "salt
 Plugin 'stephpy/vim-yaml'                   "salt
 Plugin 'Glench/Vim-Jinja2-Syntax'           "salt
@@ -23,13 +23,13 @@ Plugin 'tpope/vim-surround'
 Plugin 'townk/vim-autoclose'
 
 "bling bling
-Plugin 'yggdroot/indentline'
+"Plugin 'yggdroot/indentline'
 Plugin 'vim-syntastic/syntastic'
 
 "colors
 Plugin 'altercation/vim-colors-solarized'
 call vundle#end()
-filetype plugin indent on
+
 
 "ultisnips
 let g:UltiSnipsExpandTrigger="<c-f>"
@@ -49,14 +49,15 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_yaml_checkers = ['yamllint']
 
 "misc
 syntax on
 colorscheme solarized
 set background=dark
-
 set laststatus=2
 set pastetoggle=<F9>
+filetype plugin indent on
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
