@@ -16,9 +16,14 @@ if [ -d "$HOME/.local/bin" ]; then
 fi
 
 # Powerline
-if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
-    source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
-fi
+#if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
+#    source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+#fi
+
+# https://github.com/magicmonty/bash-git-prompt
+GIT_PROMPT_ONLY_IN_REPO=1
+GIT_PROMPT_THEME=Solarized_Ubuntu
+source ~/.bash-git-prompt/gitprompt.sh
 
 # Set TERM
 #export TERM=screen-256color
@@ -36,10 +41,13 @@ HISTFILESIZE=10000
 HISTSIZE=100
 
 # ls aliases
-alias ll='ls -la --color=auto'
+alias ll='ls -lah --color=auto'
 
 # grep alias
 alias grep='grep --color=auto'
+
+# ipcalc
+alias ipcalc2='docker run --rm hub.cert.nhn.no/goipcalc'
 
 # cd aliases
 alias ..='cd ..'
@@ -57,3 +65,10 @@ shopt -s checkwinsize
 
 # User specific aliases and functions
 
+#if [[ -z "$TMUX" ]]; then
+#    exec tmux
+#fi
+
+randpw() {
+    < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-40}; echo;
+}
