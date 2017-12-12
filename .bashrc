@@ -60,15 +60,7 @@ export EDITOR=vim
 # check if window resizes to mitigate line endings when paste etc
 shopt -s checkwinsize
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-
-# User specific aliases and functions
-
-#if [[ -z "$TMUX" ]]; then
-#    exec tmux
-#fi
-
-randpw() {
-    < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-40}; echo;
-}
+# run tmux if no SSH session
+if [[ -z "$TMUX" ]] || [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
+    exec tmux
+fi
